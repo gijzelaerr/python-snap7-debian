@@ -1,0 +1,5 @@
+python-snap7 (2.0.0-1) UNRELEASED; urgency=medium
+
+  * Initial release. (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Gijs Molenaar (PPA launchpad) <gijsmolenaar@gmail.com>  Tue, 17 Sep 2024 17:19:37 +0200

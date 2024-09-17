@@ -1,0 +1,41 @@
+Source: python-snap7
+Section: unknown
+Priority: optional
+Maintainer: Gijs Molenaar (PPA launchpad) <gijsmolenaar@gmail.com>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-sequence-python3,
+ python3-setuptools,
+ python3-all,
+ pybuild-plugin-pyproject
+#Testsuite: autopkgtest-pkg-python
+Standards-Version: 4.6.2
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Browser: https://salsa.debian.org/debian/python-snap7
+#Vcs-Git: https://salsa.debian.org/debian/python-snap7.git
+
+Package: python3-python-snap7
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ ${python3:Depends},
+ ${misc:Depends},
+Suggests:
+ python-python-snap7-doc,
+Description: <insert up to 60 chars description> (Python 3)
+ <Insert long description, indented with spaces.>
+ .
+ This package installs the library for Python 3.
+
+Package: python-python-snap7-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends:
+ ${sphinxdoc:Depends},
+ ${misc:Depends},
+Description: <insert up to 60 chars description> (common documentation)
+ <Insert long description, indented with spaces.>
+ .
+ This is the common documentation package.
