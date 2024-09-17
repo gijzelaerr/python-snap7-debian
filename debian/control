@@ -9,8 +9,7 @@ Build-Depends:
  python3-setuptools,
  python3-all,
  pybuild-plugin-pyproject,
- sphinx-common,
- libsnap7-dev
+ sphinx-common
 Standards-Version: 4.6.2
 Homepage: https://github.com/gijzelaerr/python-snap7
 Vcs-Browser: https://salsa.debian.org/debian/python-snap7
@@ -22,6 +21,7 @@ Multi-Arch: foreign
 Depends:
  ${python3:Depends},
  ${misc:Depends},
+ libsnap7-1
 Suggests:
  python-python-snap7-doc,
 Description: Siemens S7 communication library (Python 3)
