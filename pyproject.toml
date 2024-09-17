@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=68.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-snap7"
+version = "2.0.0"
+description = "Python wrapper for the snap7 library"
+readme = "README.rst"
+authors = [
+    {name = "Gijs Molenaar", email = "gijsmolenaar@gmail.com"},
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Topic :: System :: Hardware",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Manufacturing",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+license = {text = "MIT License"}
+requires-python = ">=3.9"
+keywords = ["snap7", "s7", "siemens", "plc"]
+
+[project.urls]
+Homepage = "https://github.com/gijzelaerr/python-snap7"
+Documentation = "https://python-snap7.readthedocs.io/en/latest/"
+
+[project.optional-dependencies]
+test = ["pytest", "mypy", "types-setuptools", "ruff", "tox", "types-click"]
+cli = ["rich", "click" ]
+doc = ["sphinx", "sphinx_rtd_theme"]
+
+[tool.setuptools.package-data]
+snap7 = ["py.typed", "lib/libsnap7.so", "lib/snap7.dll", "lib/libsnap7.dylib"]
+
+[tool.setuptools.packages.find]
+include = ["snap7*"]
+
+[project.scripts]
+snap7-server = "snap7.server.__main__:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers =[
+    "client",
+    "common",
+    "logo",
+    "mainloop",
+    "partner",
+    "server",
+    "util"
+    ]
+
+[tool.mypy]
+ignore_missing_imports = true
+strict = true
+# https://github.com/python/mypy/issues/2427#issuecomment-1419206807
+disable_error_code = ["method-assign", "attr-defined"]
+
+[tool.ruff]
+output-format = "full"
+line-length = 130
+target-version = "py39"
+
+[lint]
+ignore = []
+mccabe.max-complexity = 10
